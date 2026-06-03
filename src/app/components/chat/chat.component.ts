@@ -6,13 +6,13 @@ import { ChatService } from '../../services/chat.service';
 import { Chat } from '../../models/chat.model';
 
 @Component({
-  selector: 'app-chat-window',
+  selector: 'app-chat',
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule],
-  templateUrl: './chat-window.component.html',
-  styleUrl: './chat-window.component.css'
+  templateUrl: './chat.component.html', 
+  styleUrl: './chat.component.css'
 })
-export class ChatWindowComponent implements OnInit {
+export class ChatComponent implements OnInit {
   @ViewChild('messagesContainer') messagesContainer!: ElementRef;
   
   chatActual: Chat | null = null;
@@ -36,7 +36,7 @@ export class ChatWindowComponent implements OnInit {
       }
     });
   }
-
+// Detectar cambios en la ruta para cargar el chat correspondiente
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
       const chatId = params.get('id');
@@ -47,7 +47,7 @@ export class ChatWindowComponent implements OnInit {
       }
     });
   }
-
+// Método para enviar un nuevo mensaje
   enviarMensaje() {
     if (!this.formMensaje.valid || !this.chatActual) return;
 
@@ -56,7 +56,7 @@ export class ChatWindowComponent implements OnInit {
     this.formMensaje.reset();
     this.scrollToBottom();
   }
-
+// Método para scrollear al último mensaje
   private scrollToBottom() {
     try {
       if (this.messagesContainer) {
@@ -67,7 +67,7 @@ export class ChatWindowComponent implements OnInit {
       console.error('Error scrolling:', err);
     }
   }
-
+// Método para volver a la lista de chats (en móvil)
   volverAlista() {
     this.router.navigate(['/chats']);
   }

@@ -1,11 +1,11 @@
 <div class="chat-window-container">
   @if (chatActual) {
     <div class="chat-header">
-      <button class="btn-back" (click)="volverAlista()" title="Volver">
+       <button class="btn-back" (click)="volverAlista()" title="Volver">
         ← Atrás
       </button>
       <div class="contact-info">
-        <img [src]="chatActual.avatar" [alt]="chatActual.nombre" class="avatar-header" />
+        <img [src]="chatActual.avatar" alt="{{ chatActual.nombre || 'Avatar del contacto' }}" title="{{ chatActual.nombre || 'Avatar del contacto' }}" class="avatar-header" />
         <div>
           <h2>{{ chatActual.nombre }}</h2>
           <p class="estado">{{ chatActual.estado }}</p>

@@ -20,10 +20,11 @@
     @for (chat of filteredChats(); track chat.id) {
       <div 
         class="chat-item"
+        
         (click)="selectChat(chat.id)"
-        [routerLink]="['/chats', chat.id]"
+  
       >
-        <img [src]="chat.avatar" [alt]="chat.nombre" class="avatar" />
+        <img [src]="chat.avatar" [alt]="chat.nombre" title="avatar" class="avatar" />
         
         <div class="chat-info">
           <div class="chat-header">

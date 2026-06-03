@@ -1,42 +1,53 @@
-import { Component, computed, OnInit,signal } from '@angular/core';
+import { Component, computed,signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Router, RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 import { ChatService } from '../../services/chat.service';
 
 
 @Component({
   selector: 'app-chat-list',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterLink, ],
+  imports: [CommonModule, FormsModule],
   templateUrl: './chat-list.component.html',
   styleUrl: './chat-list.component.css'
 })
 export class ChatListComponent {
+ 
+
+  // Signal para el término de búsqueda
   searchTerm = signal('');
-  
+
+
+
+ //
   constructor(public chatService: ChatService, private router: Router) {}
 
+// Computed para filtrar chats según el término de búsqueda
+serachTerm = signal('');
   filteredChats = computed(() => {
     const term = this.searchTerm();
     return this.chatService.searchChats(term);
   });
 
 
-  
+  // Método para actualizar el término de búsqueda
 
   updateSearch(term: string) {
     this.searchTerm.set(term);
   }
+// Método para manejar el click en un chat
+
   selectChat(chatId: string) {
     this.chatService.setActiveChatId(chatId);
     this.router.navigate(['/chats', chatId]);
+    //this.selectChat.emit(chat)
   }
-
+// Método para navegar a la creación de un nuevo chat
   goToNewChat() {
     this.router.navigate(['/nuevo']);
   }
-
+// Método para obtener la clase CSS del estado del contacto
   getEstadoClass(estado: string): string {
     switch (estado) {
       case 'online':
