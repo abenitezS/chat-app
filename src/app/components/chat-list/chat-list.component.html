@@ -1,0 +1,50 @@
+<div class="chat-list-container">
+  <div class="header">
+    <h1>Chats</h1>
+    <button class="btn-nuevo-chat" (click)="goToNewChat()" title="Crear nuevo chat">
+      <span>+</span>
+    </button>
+  </div>
+
+  <div class="search-container">
+    <input 
+      type="text" 
+      class="search-input"
+      placeholder="Buscar chat..."
+    (input)="updateSearch($any($event.target).value)"
+      [value]="searchTerm()"
+    />
+  </div>
+
+  <div class="chats-list">
+    @for (chat of filteredChats(); track chat.id) {
+      <div 
+        class="chat-item"
+        (click)="selectChat(chat.id)"
+        [routerLink]="['/chats', chat.id]"
+      >
+        <img [src]="chat.avatar" [alt]="chat.nombre" class="avatar" />
+        
+        <div class="chat-info">
+          <div class="chat-header">
+            <h3 class="chat-nombre">{{ chat.nombre }}</h3>
+            <span class="chat-tiempo">{{ formatearTiempo(chat.ultimaActividad) }}</span>
+          </div>
+          
+          <div class="chat-footer">
+            <p class="chat-mensaje">{{ chat.ultimoMensaje || 'Sin mensajes' }}</p>
+            <span [class]="'estado ' + getEstadoClass(chat.estado)">
+              {{ chat.estado }}
+            </span>
+          </div>
+        </div>
+      </div>
+    }
+
+    @if (filteredChats().length === 0) {
+      <div class="no-chats">
+        <p>No se encontraron chats</p>
+      </div>
+    }
+  </div>
+</div>
