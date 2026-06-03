@@ -5,7 +5,9 @@
         ← Atrás
       </button>
       <div class="contact-info">
-        <img [src]="chatActual.avatar" alt="{{ chatActual.nombre || 'Avatar del contacto' }}" title="{{ chatActual.nombre || 'Avatar del contacto' }}" class="avatar-header" />
+        <img [src]="chatActual.avatar"
+        alt="{{ chatActual.nombre || 'Avatar del contacto' }}"
+         title="{{ chatActual.nombre || 'Avatar del contacto' }}" class="avatar-header" />
         <div>
           <h2>{{ chatActual.nombre }}</h2>
           <p class="estado">{{ chatActual.estado }}</p>

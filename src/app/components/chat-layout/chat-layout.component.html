@@ -1,14 +1,12 @@
     <div class="chat-layout">
       <!-- SIDEBAR: SIEMPRE VISIBLE -->
       <aside class="sidebar">
-        <app-chat-list 
-    
-          (newChatClick)="navigateToNewChat()"
-        ></app-chat-list>
+        <app-chat-list></app-chat-list>
       </aside>
 
       <!-- MAIN CONTENT: CAMBIA SEGÚN RUTA -->
       <main class="main-content">
-        <router-outlet></router-outlet>
+       
+      <router-outlet></router-outlet>
       </main>
     </div>

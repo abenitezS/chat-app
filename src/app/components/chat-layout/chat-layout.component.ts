@@ -5,7 +5,6 @@ import { ChatListComponent } from '../chat-list/chat-list.component';
 import { ChatService } from '../../services/chat.service';
 import { Chat } from '../../models/chat.model';
 
-
 @Component({
 selector: 'app-chat-layout',
   standalone: true,
@@ -18,20 +17,18 @@ export class ChatLayoutComponent implements OnInit {
   selectedChatId: number | null = null;
   chats: Chat[] = [];
   constructor(
-    private chatService: ChatService,
+    
     private router: Router,
     private activatedRoute: ActivatedRoute
   ) {}
 
  
   ngOnInit(): void {
-    this.loadChats();
-    this.watchRouteChanges();
+this.selectedChatId = null;
+    
   }
  
-  loadChats(): void {
-    this.chats = this.chatService.getChats()();
-  }
+ 
  
   // Detectar cambios en la ruta para actualizar el chat seleccionado
   watchRouteChanges(): void {
