@@ -1,12 +1,39 @@
-    <div class="chat-layout">
-      <!-- SIDEBAR: SIEMPRE VISIBLE -->
-      <aside class="sidebar">
-        <app-chat-list></app-chat-list>
-      </aside>
-
-      <!-- MAIN CONTENT: CAMBIA SEGÚN RUTA -->
-      <main class="main-content">
-       
-      <router-outlet></router-outlet>
-      </main>
+<div class="chat-layout">
+  <!-- Sidebar con toggle -->
+  <aside class="sidebar" [class.active]="showSidebar">
+    
+    <!-- Header sidebar (solo móvil) -->
+    <div class="sidebar-header" >
+     
+      <button class="btn-close-sidebar" (click)="closeSidebar()">✕</button>
     </div>
+
+    <!-- Lista de chats -->
+    <app-chat-list 
+
+  
+    ></app-chat-list>
+  </aside>
+
+  <!-- Main content -->
+  <main class="main-content">
+    
+    <!-- Header con botón menú (solo móvil) -->
+    <header class="main-header">
+      <button class="btn-menu" (click)="toggleSidebar()">☰</button>
+      <h2>{{ currentChatName }}</h2>
+    </header>
+
+    <!-- Contenido del router -->
+    <div class="content-wrapper">
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+
+  <!-- Overlay oscuro (solo móvil) -->
+  @if (showSidebar) {
+    <div class="overlay" (click)="closeSidebar()"></div>
+
+  }
+  
+</div>

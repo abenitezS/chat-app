@@ -1,22 +1,34 @@
 /* Chat Layout - Dos paneles lado a lado */
 .chat-layout {
   display: grid;
-  grid-template-columns: 280px 1fr;
+  grid-template-columns: 280px 1fr;  /* Desktop: 2 columnas */
   height: 100vh;
-  gap: 0;
-  background-color: #fff;
-  overflow: hidden;
 }
 
 /* Panel lateral izquierdo (lista de chats) */
 .sidebar {
+  /* Desktop */
   background-color: #f8f9fa;
-  border-right: 1px solid #e0e0e0;
   display: flex;
   flex-direction: column;
-  overflow-y: auto;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
+@media (max-width: 768px) {
+  .sidebar {
+    /* Móvil: Fuera del flujo, oculto por defecto */
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 260px;
+    transform: translateX(-100%);        /* Oculto */
+    transition: transform 0.3s ease-in-out;
+    z-index: 101;
+  }
+.sidebar.active {
+    transform: translateX(0);             /* Visible */
+  }
+}
+
 
 /* Panel principal derecho */
 .main-content {
@@ -26,25 +38,42 @@
   overflow: hidden;
 }
 
-/* Responsive Design - Móviles */
+.main-header {
+  display: none;                    /* Oculto en desktop */
+}
 @media (max-width: 768px) {
-  .chat-layout {
-    grid-template-columns: 1fr;
+  .main-header {
+    display: flex;                  /* Visible en móvil */
+    height: 56px;
+    padding: 0 16px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e0e0e0;
+    gap: 12px;
   }
 
-  .sidebar {
-    position: absolute;
-    left: 0;
+  .btn-menu {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+}
+
+.overlay {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .overlay {
+    display: block;                 /* Visible en móvil cuando sidebar está activo */
+    position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     bottom: 0;
-    width: 260px;
-    z-index: 50;
-    transform: translateX(-100%);
-    transition: transform 0.3s ease-in-out;
-  }
-
-  .sidebar.active {
-    transform: translateX(0);
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 99;
+    animation: fadeIn 0.2s ease-in-out;
   }
 }
 
