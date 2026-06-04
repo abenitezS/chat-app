@@ -3,12 +3,13 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ChatService } from '../../services/chat.service';
-import { Chat } from '../../models/chat.model';
+import { Chat } from '../../models/chat.model'; 
+import { FormatoFechaPipe } from '../../pipes/formato-fecha.pipe';
 
 @Component({
   selector: 'app-chat',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, FormatoFechaPipe],
   templateUrl: './chat.component.html', 
   styleUrl: './chat.component.css'
 })
@@ -69,17 +70,6 @@ export class ChatComponent implements OnInit {
   }
 
 
-  getFormatoTiempo(fecha: Date): string {
-    const ahora = new Date();
-    const horaFecha = new Date(fecha);
-    const diferencia = ahora.getTime() - horaFecha.getTime();
-    const minutos = Math.floor(diferencia / (1000 * 60));
-    const horas = Math.floor(diferencia / (1000 * 60 * 60));
-
-    if (minutos < 1) return 'Ahora';
-    if (minutos < 60) return `${minutos}m`;
-    if (horas < 24) return `${horas}h`;
-    
-    return horaFecha.toLocaleDateString('es-ES');
-  }
+  
+  
 }

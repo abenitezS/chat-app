@@ -3,12 +3,13 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ChatService } from '../../services/chat.service';
+import { FormatoFechaPipe} from '../../pipes/formato-fecha.pipe';
 
 
 @Component({
   selector: 'app-chat-list',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, FormatoFechaPipe],
   templateUrl: './chat-list.component.html',
   styleUrl: './chat-list.component.css'
 })
@@ -61,18 +62,5 @@ serachTerm = signal('');
     }
   }
 
-  formatearTiempo(fecha: Date): string {
-    const ahora = new Date();
-    const diferencia = ahora.getTime() - new Date(fecha).getTime();
-    const minutos = Math.floor(diferencia / (1000 * 60));
-    const horas = Math.floor(diferencia / (1000 * 60 * 60));
-    const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
 
-    if (minutos < 1) return 'Ahora';
-    if (minutos < 60) return `hace ${minutos}m`;
-    if (horas < 24) return `hace ${horas}h`;
-    if (dias < 7) return `hace ${dias}d`;
-    
-    return new Date(fecha).toLocaleDateString('es-ES');
-  }
 }

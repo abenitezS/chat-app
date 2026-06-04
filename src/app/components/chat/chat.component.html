@@ -27,7 +27,7 @@
         <div [class]="'mensaje mensaje-' + mensaje.remitente">
           <div class="mensaje-bubble">
             <p>{{ mensaje.contenido }}</p>
-            <span class="timestamp">{{ getFormatoTiempo(mensaje.timestamp) }}</span>
+            <span class="timestamp">{{ mensaje.timestamp | formatoFecha }}</span>
           </div>
         </div>
       }

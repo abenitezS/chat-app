@@ -2,8 +2,10 @@
   <div class="header">
     <h1>Chats</h1>
     <button class="btn-nuevo-chat" (click)="goToNewChat()" title="Crear nuevo chat">
-      <span>+</span>
+      <span>+ </span>
     </button>
+    
+    
   </div>
 
   <div class="search-container">
@@ -29,7 +31,7 @@
         <div class="chat-info">
           <div class="chat-header">
             <h3 class="chat-nombre">{{ chat.nombre }}</h3>
-            <span class="chat-tiempo">{{ formatearTiempo(chat.ultimaActividad) }}</span>
+            <span class="chat-tiempo">{{chat.ultimaActividad | formatoFecha }}</span>
           </div>
           
           <div class="chat-footer">

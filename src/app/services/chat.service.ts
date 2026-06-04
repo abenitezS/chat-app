@@ -9,8 +9,8 @@ export class ChatService {
   private chats = signal<Chat[]>([
     {
       id: '1',
-      nombre: 'Vincent Porter',
-      avatar: 'https://i.pravatar.cc/150?img=1',
+      nombre: 'Vincente Portal',
+      avatar: 'avatars/avatar1.jpg', //avatar1
       estado: 'online',
       ultimoMensaje: 'Hola, ¿cómo estás?',
       ultimaActividad: new Date(Date.now() - 5 * 60000),
@@ -21,8 +21,8 @@ export class ChatService {
     },
     {
       id: '2',
-      nombre: 'Aiden Chavez',
-      avatar: 'https://i.pravatar.cc/150?img=2',
+      nombre: 'Analia Chavez',
+      avatar: 'avatars/avatar2.jpg', //avatar2
       estado: 'offline',
       ultimoMensaje: 'Nos vemos luego',
       ultimaActividad: new Date(Date.now() - 2 * 60 * 60000),
@@ -33,8 +33,8 @@ export class ChatService {
     },
     {
       id: '3',
-      nombre: 'Mike Thomas',
-      avatar: 'https://i.pravatar.cc/150?img=3',
+      nombre: 'Miguel Terminiello',
+      avatar: 'avatars/avatar3.jpg', //avatar3
       estado: 'online',
       ultimoMensaje: 'Gracias por tu ayuda',
       ultimaActividad: new Date(Date.now() - 30 * 60000),
@@ -45,8 +45,8 @@ export class ChatService {
     },
     {
       id: '4',
-      nombre: 'Christian Kelly',
-      avatar: 'https://i.pravatar.cc/150?img=4',
+      nombre: 'Christian Pelusso',
+      avatar: 'avatars/avatar4.jpg', //avatar4
       estado: 'visto hace poco',
       ultimoMensaje: 'Perfecto, nos vemos',
       ultimaActividad: new Date(Date.now() - 4 * 60 * 60000),
@@ -54,8 +54,8 @@ export class ChatService {
     },
     {
       id: '5',
-      nombre: 'Monica Ward',
-      avatar: 'https://i.pravatar.cc/150?img=5',
+      nombre: 'Monica Ferreira',
+      avatar: 'avatars/avatar5.jpg', //avatar5
       estado: 'online',
       ultimoMensaje: 'Excelente idea',
       ultimaActividad: new Date(Date.now() - 15 * 60000),
@@ -66,8 +66,8 @@ export class ChatService {
     },
     {
       id: '6',
-      nombre: 'Dean Henry',
-      avatar: 'https://i.pravatar.cc/150?img=6',
+      nombre: 'Daniel Hoffmann',
+      avatar: 'avatars/avatar6.jpg', //avatar6
       estado: 'offline',
       ultimoMensaje: 'Última vez visto hace 2h',
       ultimaActividad: new Date(Date.now() - 2 * 60 * 60000),

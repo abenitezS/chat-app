@@ -178,4 +178,19 @@
   .chat-nombre {
     font-size: 13px;
   }
+  .main-header {
+    display: flex;                  /* Visible en móvil */
+    height: 56px;
+    padding: 0 16px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e0e0e0;
+    gap: 12px;
+  }
+
+  .btn-menu {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
 }

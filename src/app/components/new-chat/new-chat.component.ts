@@ -16,16 +16,16 @@ export class NewChatComponent {
   loading = false;
 
   avatares = [
-    'https://i.pravatar.cc/150?img=1',
-    'https://i.pravatar.cc/150?img=2',
-    'https://i.pravatar.cc/150?img=3',
-    'https://i.pravatar.cc/150?img=4',
-    'https://i.pravatar.cc/150?img=5',
-    'https://i.pravatar.cc/150?img=6',
-    'https://i.pravatar.cc/150?img=7',
-    'https://i.pravatar.cc/150?img=8',
-    'https://i.pravatar.cc/150?img=9',
-    'https://i.pravatar.cc/150?img=10'
+    'avatars/avatar1.jpg',
+    'avatars/avatar2.jpg',
+    'avatars/avatar3.jpg',
+    'avatars/avatar4.jpg',
+    'avatars/avatar5.jpg',
+    'avatars/avatar6.jpg',
+    'avatars/avatar7.jpg',
+    'avatars/avatar8.jpg',
+    'avatars/avatar9.jpg',
+    'avatars/avatar10.jpg'
   ];
 
   avatarSeleccionado: string;

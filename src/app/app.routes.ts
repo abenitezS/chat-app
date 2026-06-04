@@ -9,7 +9,7 @@ export const routes: Routes = [
     path: '',
     component: ChatLayoutComponent, // ← El contenedor (SIEMPRE VISIBLE)
     children: [
-  
+      {path: 'chats', component: ChatListComponent },
       { path: 'chats/:id', component: ChatComponent },
       { path: 'nuevo', component: NewChatComponent },
       { path: '', redirectTo: 'chats/1', pathMatch: 'full' },
