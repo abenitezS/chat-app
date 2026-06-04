@@ -61,6 +61,10 @@ export class ChatLayoutComponent implements OnInit {
     // Navegar a /chats/:id
     this.selectedChatId = parseInt(chat.id, 10);
     this.router.navigate(['/chats', chat.id]);
+    window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+      this.showSidebar = false;
+    }});
   }
  
   navigateToNewChat(): void {

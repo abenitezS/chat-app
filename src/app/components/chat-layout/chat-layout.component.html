@@ -2,11 +2,6 @@
   <!-- Sidebar con toggle -->
   <aside class="sidebar" [class.active]="showSidebar">
     
-    <!-- Header sidebar (solo móvil) -->
-    <div class="sidebar-header" >
-     
-      <button class="btn-close-sidebar" (click)="closeSidebar()">✕</button>
-    </div>
 
     <!-- Lista de chats -->
     <app-chat-list 
@@ -20,7 +15,7 @@
     
     <!-- Header con botón menú (solo móvil) -->
     <header class="main-header">
-      <button class="btn-menu" (click)="toggleSidebar()">☰</button>
+      <button class="btn-menu" (click)="toggleSidebar()"> ⬅️  </button>
       <h2>{{ currentChatName }}</h2>
     </header>
 

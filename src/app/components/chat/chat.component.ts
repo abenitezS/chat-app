@@ -67,10 +67,7 @@ export class ChatComponent implements OnInit {
       console.error('Error scrolling:', err);
     }
   }
-// Método para volver a la lista de chats (en móvil)
-  volverAlista() {
-    this.router.navigate(['/chats']);
-  }
+
 
   getFormatoTiempo(fecha: Date): string {
     const ahora = new Date();
