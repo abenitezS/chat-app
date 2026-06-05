@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet, Router, ActivatedRoute } from '@angular/router';
 import { ChatListComponent } from '../chat-list/chat-list.component';
 import { Chat } from '../../models/chat.model';
+import {EmptyChatComponent} from '../empty-chat-component/empty-chat.component';
 
 @Component({
 selector: 'app-chat-layout',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, ChatListComponent],
+  imports: [CommonModule, RouterOutlet, ChatListComponent, EmptyChatComponent],
   templateUrl: './chat-layout.component.html',
   styleUrl: './chat-layout.component.css',
 })
@@ -27,7 +28,7 @@ export class ChatLayoutComponent implements OnInit {
 
  
   ngOnInit(): void {
-    this.selectedChatId = 0;
+    
     this.watchRouteChanges();
     this.closeSidebarOnResize();
     
@@ -51,6 +52,7 @@ export class ChatLayoutComponent implements OnInit {
       this.closeSidebar();
     } else {
       this.selectedChatId = null;
+      this.router.navigate(['/empty']); // Navegar a vista vacía si no hay chat seleccionado
       this.currentChatName = 'Chats';
     }
   });
@@ -59,8 +61,8 @@ export class ChatLayoutComponent implements OnInit {
  
   selectChat(chat: Chat): void {
     // Navegar a /chats/:id
-    this.selectedChatId = parseInt(chat.id, 10);
-    this.router.navigate(['/chats', chat.id]);
+    // this.selectedChatId = parseInt(chat.id, 10);
+    // this.router.navigate(['/chats', chat.id]);
     window.addEventListener('resize', () => {
     if (window.innerWidth > 768) {
       this.showSidebar = false;
