@@ -1,7 +1,7 @@
 .chat-list-container {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100dvh;
   background-color: #ffffff;
   border-right: 1px solid #e5e5e5;
 }
@@ -159,7 +159,9 @@
   height: 100%;
   color: #999;
 }
-
+.main-header {
+  display: none;                    /* Oculto en desktop */
+}
 /* Responsive */
 @media (max-width: 768px) {
   .chat-list-container {
@@ -178,7 +180,7 @@
   .chat-nombre {
     font-size: 13px;
   }
-  .main-header {
+   .main-header {
     display: flex;                  /* Visible en móvil */
     height: 56px;
     padding: 0 16px;
@@ -192,5 +194,17 @@
     border: none;
     font-size: 24px;
     cursor: pointer;
-  }
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  transition: background-color 0.2s;
+ 
+  
+ 
+}
+
+.btn-menu:hover {
+  background-color: #0056b3;
+}
+
 }

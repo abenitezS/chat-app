@@ -1,8 +1,20 @@
 <div class="chat-layout">
   <!-- Sidebar con toggle --> 
    
-  <aside class="sidebar" [class.active]="showSidebar">
+<aside
+  class="sidebar"
+  [class.active]="showSidebar"
+  [class.mobile-hidden]="hasNewChat || hasChatSelected"
+  >
+     @if (showSidebar) {
+    <div >
+<header class="main-header">
+      <button class="btn-menu" (click)="closeSidebar()"> ➡️ </button>
+     </header>
+    </div>
    
+  }
+  
 
     <!-- Lista de chats Panel lateral izquierdo -->
     <app-chat-list > </app-chat-list>
@@ -11,9 +23,7 @@
   <!-- Main content -->
   <main class="main-content">
   <!--Panel lateral derecho -->
-
-  
-    <!-- Header con botón menú (solo móvil) -->
+   <!-- Header con botón menú (solo móvil) -->
     <header class="main-header">
       <button class="btn-menu" (click)="toggleSidebar()"> ⬅️  </button>
       <h2>{{ currentChatName }}</h2>
@@ -23,13 +33,8 @@
     <div class="content-wrapper">
       <router-outlet></router-outlet>
     </div>
-    
-  </main>
+ </main>
 
   <!-- Overlay oscuro (solo móvil) -->
-  @if (showSidebar) {
-    <div class="overlay" (click)="closeSidebar()"></div>
 
-  }
-  
 </div>

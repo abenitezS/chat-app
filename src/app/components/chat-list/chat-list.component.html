@@ -1,13 +1,20 @@
 <div class="chat-list-container">
+ 
+ 
   <div class="header">
+
     <h1>Chats</h1>
+  
     <button class="btn-nuevo-chat" (click)="goToNewChat()" title="Crear nuevo chat">
       <span>+ </span>
-    </button>
-    
-    
-  </div>
 
+    </button>
+      <header class="main-header">
+      <button class="btn-menu" (click)="goToChats()"> ➡️ </button>
+    </header>
+  </div>
+    
+    
   <div class="search-container">
     <input 
       type="text" 
