@@ -103,7 +103,7 @@ export class ChatService {
       ultimaActividad: new Date(),
       mensajes: []
     };
-    
+
     this.chats.update(chats => [...chats, newChat]);
     return newChat.id;
   }
@@ -139,9 +139,9 @@ export class ChatService {
         '¿Podemos charlar al respecto?',
         'Eso suena genial'
       ];
-      
+
       const respuestaAleatoria = respuestas[Math.floor(Math.random() * respuestas.length)];
-      
+
       const appMessage: Mensaje = {
         id: (Date.now() + 1).toString(),
         contenido: respuestaAleatoria,
@@ -157,12 +157,7 @@ export class ChatService {
     }, 1000 + Math.random() * 1000);
   }
 
-  buscarChats(termino: string) {
-    const chatsFiltered = this.chats().filter(chat =>
-      chat.nombre.toLowerCase().includes(termino.toLowerCase())
-    );
-    return chatsFiltered;
-  }
+
   searchChats(searchTerm: string): Chat[] {
     if (!searchTerm) return this.chats();
     return this.chats().filter(chat =>

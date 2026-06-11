@@ -6,15 +6,7 @@
   [class.active]="showSidebar"
   [class.mobile-hidden]="hasNewChat || hasChatSelected"
   >
-     @if (showSidebar) {
-    <div >
-<header class="main-header">
-      <button class="btn-menu" (click)="closeSidebar()"> ➡️ </button>
-     </header>
-    </div>
-   
-  }
-  
+
 
     <!-- Lista de chats Panel lateral izquierdo -->
     <app-chat-list > </app-chat-list>

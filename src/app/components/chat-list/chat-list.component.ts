@@ -5,28 +5,15 @@ import { Router } from '@angular/router';
 import { ChatService } from '../../services/chat.service';
 import { FormatoFechaPipe} from '../../pipes/formato-fecha.pipe';
 
-import { ActivatedRoute } from '@angular/router';
-
 @Component({
   selector: 'app-chat-list',
   standalone: true,
-  imports: [CommonModule, FormsModule, FormatoFechaPipe],
+  imports: [CommonModule, FormsModule, FormatoFechaPipe,],
   templateUrl: './chat-list.component.html',
   styleUrl: './chat-list.component.css'
 })
-export class ChatListComponent implements OnInit{
+export class ChatListComponent {
  
-  private route = inject(ActivatedRoute);
-  ultimaRuta: string = '';
-
- ngOnInit() {
-    // Tomamos la URL activa y la separamos por '/'
-    const url = this.route.snapshot.url.map(segment => segment.path);
-    // Extraemos el último elemento
-    this.ultimaRuta = url[url.length - 1]; 
-  }
-
-
   // Signal para el término de búsqueda
   searchTerm = signal('');
 
@@ -60,10 +47,7 @@ export class ChatListComponent implements OnInit{
     this.router.navigate(['/nuevo']);
   };
 
-  goToChats(){
-    this.router.navigate(['/empty']);
-  };
-
+  
 // Método para obtener la clase CSS del estado del contacto  //podria ser un PIPE!!
   getEstadoClass(estado: string): string {
     switch (estado) {

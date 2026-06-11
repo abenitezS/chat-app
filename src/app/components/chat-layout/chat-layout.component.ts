@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet, Router, ActivatedRoute } from '@angular/router';
 import { ChatListComponent } from '../chat-list/chat-list.component';
 import { Chat } from '../../models/chat.model';
-import {EmptyChatComponent} from '../empty-chat-component/empty-chat.component';
+
 
 @Component({
 selector: 'app-chat-layout',
