@@ -1,54 +1,36 @@
-import { Component, computed,inject,OnInit,signal } from '@angular/core';
+import { Component, computed, inject,signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
+import { RouterLink } from '@angular/router';
 import { ChatService } from '../../services/chat.service';
-import { FormatoFechaPipe} from '../../pipes/formato-fecha.pipe';
+import { FormatoFechaPipe } from '../../pipes/formato-fecha.pipe';
 
 @Component({
   selector: 'app-chat-list',
   standalone: true,
-  imports: [CommonModule, FormsModule, FormatoFechaPipe,],
+  imports: [CommonModule, FormsModule, FormatoFechaPipe, RouterLink],
   templateUrl: './chat-list.component.html',
-  styleUrl: './chat-list.component.css'
+  styleUrl: './chat-list.component.css',
 })
 export class ChatListComponent {
- 
   // Signal para el término de búsqueda
   searchTerm = signal('');
 
- // Inyectar ChatService para acceder a los chats y Router para navegación
- chatService = inject(ChatService);
- router = inject(Router);
+  // Inyectar ChatService para acceder a los chats
+  chatService = inject(ChatService);
 
-
- 
-// Computed para filtrar chats según el término de búsqueda
-
+  // Computed para filtrar chats según el término de búsqueda
   filteredChats = computed(() => {
     const term = this.searchTerm();
     return this.chatService.searchChats(term);
   });
 
-
-// Método para actualizar el término de búsqueda
- updateSearch(term: string) {
+  // Método para actualizar el término de búsqueda
+  updateSearch(term: string) {
     this.searchTerm.set(term);
   }
-// Método para manejar el click en un chat
 
-  selectChat(chatId: string) {
-    this.chatService.setActiveChatId(chatId);
-    this.router.navigate(['/chats', chatId]);
-    //this.selectChat.emit(chat)
-  }
-// Método para navegar a la creación de un nuevo chat
-  goToNewChat() {
-    this.router.navigate(['/nuevo']);
-  };
-
-  
-// Método para obtener la clase CSS del estado del contacto  //podria ser un PIPE!!
+  // Método para obtener la clase CSS del estado del contacto
   getEstadoClass(estado: string): string {
     switch (estado) {
       case 'online':
@@ -61,6 +43,4 @@ export class ChatListComponent {
         return '';
     }
   }
-
-
 }

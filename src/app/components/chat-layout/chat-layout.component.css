@@ -1,54 +1,82 @@
-/* Chat Layout - Dos paneles lado a lado */
 .chat-layout {
   display: grid;
-  grid-template-columns: 280px 1fr;  /* Desktop: 2 columnas */
+  grid-template-columns: 280px 1fr;
   height: 100vh;
-}
-
-/* Panel lateral izquierdo (lista de chats) */
-.sidebar {
-  /* Desktop */
-  background-color: #f8f9fa;
-  display: flex;
-  flex-direction: column;
-}
-@media (max-width: 768px) {
-  .sidebar {
-    /* Móvil: Fuera del flujo, oculto por defecto */
-    position: fixed;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 260px;
-    transform: translateX(-100%);        /* Oculto */
-    transition: transform 0.3s ease-in-out;
-    z-index: 101;
-  }
-.sidebar.active {
-    transform: translateX(0);             /* Visible */
-  }
-}
-
-
-/* Panel principal derecho */
-.main-content {
-  display: flex;
-  flex-direction: column;
-  background-color: #fff;
   overflow: hidden;
 }
 
-.main-header {
-  display: none;                    /* Oculto en desktop */
+/* Sidebar Desktop */
+.sidebar {
+  background-color: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #e5e5e5;
 }
+
+/* Main Content */
+.main-content {
+  display: flex;
+  flex-direction: column;
+   height: 100vh;
+}
+
+.main-header {
+  display: none;
+}
+.content-wrapper {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+}
+/* ==========================
+   TABLET Y MOBILE
+========================== */
 @media (max-width: 768px) {
+
+  .chat-layout {
+    display: block;
+    position: relative;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 100vh;
+
+    background: white;
+
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+
+    z-index: 1000;
+
+    box-shadow: 2px 0 10px rgba(0,0,0,.15);
+  }
+
+  .sidebar.active {
+    transform: translateX(0);
+  }
+
+  .main-content {
+    width: 100%;
+    height: 100vh;
+  }
+
   .main-header {
-    display: flex;                  /* Visible en móvil */
+    display: flex;
+    align-items: center;
     height: 56px;
     padding: 0 16px;
+
     background-color: #f8f9fa;
     border-bottom: 1px solid #e0e0e0;
+
     gap: 12px;
+    flex-shrink: 0;
   }
 
   .btn-menu {
@@ -58,5 +86,3 @@
     cursor: pointer;
   }
 }
-
-
