@@ -4,6 +4,7 @@ import { ChatComponent } from './components/chat/chat.component';
 import { NewChatComponent } from './components/new-chat/new-chat.component';
 import { ChatLayoutComponent } from './components/chat-layout/chat-layout.component';
 import { EmptyChatComponent } from './components/empty-chat-component/empty-chat.component';
+import {chatGuard} from './guard'
 
 export const routes: Routes = [
   {
@@ -14,7 +15,8 @@ export const routes: Routes = [
 
       // Panel derecho
       { path: 'chats', component: EmptyChatComponent },
-      { path: 'chats/:id', component: ChatComponent },
+      { path: 'chats/:id', component: ChatComponent ,
+        canActivate: [chatGuard]},
       { path: 'nuevo', component: NewChatComponent }
     ]
   }

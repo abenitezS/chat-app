@@ -82,7 +82,7 @@ export class ChatService {
     return this.chats;
   }
 
-  getChatById(id: string) {
+  getChatById(id: string|null) {
     return this.chats().find(chat => chat.id === id);
   }
 
