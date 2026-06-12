@@ -12,12 +12,11 @@
   flex-direction: column;
   border-right: 1px solid #e5e5e5;
 }
-
-.h1 {
+.app-title {
   margin: 0;
-  font-size: 5px;
+  font-size: 1.25rem;
   color: #333;
-  font-weight: 100;
+  font-weight: 600;
 }
 
 /* Main Content */
@@ -49,11 +48,8 @@
     position: relative;
   }
 
-  .main-header h1 {
-    margin: 0;
-    font-size: 1.5rem;
-    color: #333;
-    font-weight: 600;
+   .app-title {
+    font-size: 1rem;
   }
 
   .sidebar {

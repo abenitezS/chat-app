@@ -1,59 +1,183 @@
-# ChatApp
+# Chat App
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.12.
+## Descripción
 
-## Development server
+Chat App es una aplicación web desarrollada con Angular 21 que simula una plataforma de mensajería instantánea similar a WhatsApp. Permite visualizar conversaciones, abrir chats individuales, enviar mensajes y crear nuevos contactos mediante formularios reactivos.
 
-To start a local development server, run:
+La aplicación fue desarrollada utilizando Standalone Components, Angular Router y RxJS, aplicando principios de diseño responsive para adaptarse a dispositivos móviles y de escritorio.
+
+---
+ng 
+## Funcionalidades
+
+* Lista de conversaciones.
+* Apertura de chats mediante rutas dinámicas.
+* Envío de mensajes.
+* Creación de nuevos chats.
+* Búsqueda de conversaciones.
+* Diseño responsive para dispositivos móviles y escritorio.
+* Gestión de datos mediante servicios y observables.
+
+---
+
+## Tecnologías utilizadas
+
+* Angular 21
+* TypeScript
+* HTML5
+* CSS3
+* Angular Router
+* Reactive Forms
+* RxJS
+
+---
+
+## Instalación
+
+### Clonar repositorio
+
+```bash
+git clone https://github.com/abenitezS/chat-app.git
+```
+
+### Ingresar al proyecto
+
+```bash
+cd chat-app
+```
+
+### Instalar dependencias
+
+```bash
+npm install
+```
+
+### Ejecutar la aplicación
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Abrir en:
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```text
+http://localhost:4200
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
+## Estructura del proyecto
+
+```text
+src/
+├── app/
+│   ├── models/
+│   │   └── chat.model.ts
+│   │
+│   ├── services/
+│   │   └── chat.service.ts
+│   │
+│   ├── components/
+│   │   ├── chat-layout/
+│   │   ├── chat-list/
+│   │   ├── chat/
+│   │   ├── new-chat/
+│   │   └── empty-chat/
+│   │
+│   ├── app.routes.ts
+│   └── app.component.ts
+│
+├── main.ts
+├── styles.css
+└── index.html
 ```
 
-## Building
+---
 
-To build the project run:
+## Estructura de navegación
 
-```bash
-ng build
+### Lista de chats
+
+Ruta:
+
+```text
+/chats
+```
+- Inicio
+![Captura de pantalla](src/assets/capturas/Captura1.png)      
+
+Pagina de inicio 
+Permite visualizar todas las conversaciones disponibles y realizar búsquedas.
+
+### Conversación individual
+
+Ruta:
+
+```text
+/chats/:id
+```
+ Chat con el contacto seleccionado 
+![Captura de pantalla](src/assets/capturas/Captura1.png)      
+
+
+Muestra los mensajes correspondientes al contacto seleccionado y permite enviar nuevos mensajes.
+
+### Nuevo chat
+
+Ruta:
+
+```text
+/nuevo
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+- Nuevo
 
-## Running unit tests
+![Captura de pantalla](src/assets/capturas/Captura1.png)      
+Formulario para crear una nueva conversación seleccionando nombre y avatar.
+---
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+## Diseño Responsive
 
-```bash
-ng test
-```
+La aplicación adapta su interfaz según el tamaño de pantalla:
 
-## Running end-to-end tests
+### Escritorio
 
-For end-to-end (e2e) testing, run:
+* Lista de chats en panel lateral.
+* Conversación visible simultáneamente.
+* Navegación tipo dos columnas.
 
-```bash
-ng e2e
-```
+### Dispositivos móviles
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+* Lista de chats a pantalla completa.
+* Conversación a pantalla completa.
+* Navegación mediante botón de retorno.
+* Sidebar adaptable al ancho completo de la pantalla.
 
-## Additional Resources
+---
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Autor
+
+**Alicia Benitez**
+
+Trabajo Final Integrador
+
+Curso: Desarrollo Frontend con Angular
+
+Año: 2026
+
+---
+
+## Bibliografía
+
+* Angular Documentation: https://angular.dev
+* Angular Router Guide: https://angular.dev/guide/routing
+* RxJS Documentation: https://rxjs.dev
+* TypeScript Documentation: https://www.typescriptlang.org/docs/
+
+---
+
+## Créditos
+
+Proyecto desarrollado con fines educativos y académicos.
+
+Las imágenes de avatar utilizadas corresponden a recursos de demostración utilizados únicamente para prácticas educativas.

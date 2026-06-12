@@ -1,7 +1,9 @@
 <div class="new-chat-container">
-  <div class="form-card">
-    <h1>Crear nuevo chat</h1>
-    
+
+   <div class="page-header">
+  <h2>Nuevo Chat</h2>
+</div>
+      <div class="form-card">
     <form [formGroup]="formNuevoChat" (ngSubmit)="crearChat()" class="form">
       <div class="form-group">
         <label for="nombre">Nombre del contacto</label>

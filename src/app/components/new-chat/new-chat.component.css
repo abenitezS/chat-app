@@ -1,22 +1,35 @@
+
 .new-chat-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  padding: 20px;
+  height: 100%;
+  width: 100%;
+  padding: 24px;
+  background: #fff;
+  overflow-y: auto;
+
+  
 }
+.page-header {
+  padding-bottom: 16px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.page-header h2 {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
 
 .form-card {
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-  padding: 40px;
-  max-width: 500px;
-  width: 100%;
-  animation: slideUp 0.3s ease-out;
-}
 
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,.08);
+  padding: 24px;
+  max-width: 700px;
+  width: 100%;
+}
 @keyframes slideUp {
   from {
     opacity: 0;
@@ -29,10 +42,10 @@
 }
 
 .form-card h1 {
-  margin: 0 0 30px 0;
-  font-size: 28px;
+  margin: 0 0 24px;
+  font-size: 1.5rem;
+  font-weight: 600;
   color: #333;
-  text-align: center;
 }
 
 .form {
@@ -54,9 +67,9 @@
 }
 
 .input {
-  padding: 12px 14px;
-  border: 1px solid #e5e5e5;
-  border-radius: 8px;
+  padding: 14px;
+  border: 1px solid #dcdcdc;
+  border-radius: 10px;
   font-size: 14px;
   outline: none;
   transition: all 0.2s;
@@ -79,7 +92,7 @@
 
 .avatares-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
   gap: 12px;
 }
 
@@ -99,8 +112,8 @@
 }
 
 .avatar-btn.selected {
-  border-color: #667eea;
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 2px rgba(13,110,253,.2);
 }
 
 .avatar-btn img {
@@ -129,13 +142,11 @@
 }
 
 .btn-primary {
-  background-color: #667eea;
-  color: white;
+  background-color: #0d6efd;
 }
 
 .btn-primary:hover:not(:disabled) {
-  background-color: #5568d3;
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+  background-color: #0b5ed7;
 }
 
 .btn-primary:disabled {
@@ -164,10 +175,12 @@
     padding: 24px;
   }
 
-  .form-card h1 {
-    font-size: 22px;
-    margin-bottom: 20px;
-  }
+.form-card h1 {
+  margin: 0 0 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+}
 
   .avatares-grid {
     grid-template-columns: repeat(4, 1fr);

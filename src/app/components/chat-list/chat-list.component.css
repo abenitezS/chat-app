@@ -10,32 +10,33 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  padding: 16px;
   border-bottom: 1px solid #e5e5e5;
-  background-color: #f9f9f9;
+  background: #fff;
 }
 
 .header h1 {
   margin: 0;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: #333;
   font-weight: 600;
 }
 
 .btn-nuevo-chat {
-  background-color: #007bff;
-  color: white;
+  width: 36px;
+  height: 36px;
   border: none;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  background: #007bff;
+  color: white;
   font-size: 20px;
   cursor: pointer;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.2s;
 }
+
 
 .btn-nuevo-chat:hover {
   background-color: #0056b3;
@@ -174,7 +175,8 @@
   }
 
   .header h1 {
-    font-size: 25px;
+  font-size: 1.1rem;
+  font-weight: 600;
   }
 
   .chat-nombre {
