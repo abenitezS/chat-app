@@ -90,6 +90,19 @@
   margin-top: 4px;
 }
 
+
+.errores {
+  color: red;
+  font-size: 0.875rem;
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0.25rem;
+}
+
+.errores li {
+  margin-bottom: 0.2rem;
+}
+
 .avatares-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
@@ -167,6 +180,17 @@
 .btn-secondary:disabled {
   color: #ccc;
   cursor: not-allowed;
+}
+.errores {
+  color: red;
+  font-size: 0.875rem;
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0.25rem;
+}
+.campo-invalido {
+  border-color: red;
+  background-color: #ffe6e6;
 }
 
 /* Responsive */

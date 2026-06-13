@@ -37,10 +37,37 @@ export class NewChatComponent {
   ) {
     this.avatarSeleccionado = this.avatares[0];
     this.formNuevoChat = this.fb.group({
-      nombre: ['', [Validators.required, Validators.minLength(2)]],
+    nombre: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(3),
+          Validators.maxLength(50),
+          Validators.pattern(/^[a-zA-Z\s]+$/),
+        ],
+    ],
       avatar: [this.avatarSeleccionado]
     });
+
   }
+
+  get f() {
+    return this.formNuevoChat.controls;
+  }
+
+  get erroresNombre(): string[] {
+    const errores = [];
+    if (this.f['nombre']?.hasError('required'))
+      errores.push('El nombre es obligatorio');
+    if (this.f['nombre']?.hasError('minlength'))
+      errores.push('El nombre debe tener al menos 3 caracteres');
+    if (this.f['nombre']?.hasError('maxlength'))
+      errores.push('El nombre no debe tener más de 50 caracteres');
+    if (this.f['nombre']?.hasError('pattern'))
+      errores.push('El nombre solo puede contener letras y espacios');
+    return errores;
+  }
+
 
   seleccionarAvatar(avatar: string) {
     this.avatarSeleccionado = avatar;

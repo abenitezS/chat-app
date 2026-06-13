@@ -13,18 +13,16 @@
           placeholder="Ej: Juan García"
           formControlName="nombre"
           class="input"
-          [class.error]="nombreControl?.invalid && nombreControl?.touched"
+          [class.error]="f['nombre'].invalid && f['nombre'].touched"
         />
-        @if (nombreControl?.invalid && nombreControl?.touched) {
-          <span class="error-message">
-            @if (nombreControl?.errors?.['required']) {
-              El nombre es requerido
+      <ul class="errores">
+
+            @for(errorNombre of erroresNombre; track $index) {
+          <li>{{ errorNombre }}</li>
             }
-            @if (nombreControl?.errors?.['minlength']) {
-              El nombre debe tener al menos 2 caracteres
-            }
-          </span>
-        }
+    </ul>
+        
+     
       </div>
 
       <div class="form-group">
