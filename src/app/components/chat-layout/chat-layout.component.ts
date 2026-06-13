@@ -1,6 +1,6 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet, Router, RouterLink} from '@angular/router';
+import { RouterOutlet, Router } from '@angular/router';
 import { ChatListComponent } from '../chat-list/chat-list.component';
 import { Chat } from '../../models/chat.model';
 

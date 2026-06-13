@@ -1,13 +1,11 @@
-
 .new-chat-container {
   height: 100%;
   width: 100%;
   padding: 24px;
   background: #fff;
   overflow-y: auto;
-
-  
 }
+
 .page-header {
   padding-bottom: 16px;
   margin-bottom: 24px;
@@ -20,32 +18,25 @@
   font-weight: 600;
 }
 
-
 .form-card {
-
   background: white;
   border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0,0,0,.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   padding: 24px;
   max-width: 700px;
   width: 100%;
 }
+
 @keyframes slideUp {
   from {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-.form-card h1 {
-  margin: 0 0 24px;
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #333;
 }
 
 .form {
@@ -84,13 +75,6 @@
   border-color: #dc3545;
 }
 
-.error-message {
-  font-size: 12px;
-  color: #dc3545;
-  margin-top: 4px;
-}
-
-
 .errores {
   color: red;
   font-size: 0.875rem;
@@ -126,7 +110,7 @@
 
 .avatar-btn.selected {
   border-color: #0d6efd;
-  box-shadow: 0 0 0 2px rgba(13,110,253,.2);
+  box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.2);
 }
 
 .avatar-btn img {
@@ -181,6 +165,7 @@
   color: #ccc;
   cursor: not-allowed;
 }
+
 .errores {
   color: red;
   font-size: 0.875rem;
@@ -188,23 +173,12 @@
   padding-left: 0;
   margin-top: 0.25rem;
 }
-.campo-invalido {
-  border-color: red;
-  background-color: #ffe6e6;
-}
 
 /* Responsive */
 @media (max-width: 480px) {
   .form-card {
     padding: 24px;
   }
-
-.form-card h1 {
-  margin: 0 0 24px;
-  font-size: 1rem;
-  font-weight: 600;
-  color: #333;
-}
 
   .avatares-grid {
     grid-template-columns: repeat(4, 1fr);

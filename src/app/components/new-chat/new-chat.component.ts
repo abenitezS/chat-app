@@ -9,7 +9,7 @@ import { ChatService } from '../../services/chat.service';
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './new-chat.component.html',
-  styleUrl: './new-chat.component.css'
+  styleUrl: './new-chat.component.css',
 })
 export class NewChatComponent {
   formNuevoChat: FormGroup;
@@ -25,7 +25,7 @@ export class NewChatComponent {
     'avatars/avatar7.jpg',
     'avatars/avatar8.jpg',
     'avatars/avatar9.jpg',
-    'avatars/avatar10.jpg'
+    'avatars/avatar10.jpg',
   ];
 
   avatarSeleccionado: string;
@@ -33,22 +33,21 @@ export class NewChatComponent {
   constructor(
     private fb: FormBuilder,
     private chatService: ChatService,
-    private router: Router
+    private router: Router,
   ) {
     this.avatarSeleccionado = this.avatares[0];
     this.formNuevoChat = this.fb.group({
-    nombre: [
+      nombre: [
         '',
         [
           Validators.required,
           Validators.minLength(3),
           Validators.maxLength(50),
-          Validators.pattern(/^[a-zA-Z\s]+$/),
+          Validators.pattern(/^[a-zA-ZáéíóúüñÁÉÍÓÚÜÑ\s]+$/),
         ],
-    ],
-      avatar: [this.avatarSeleccionado]
+      ],
+      avatar: [this.avatarSeleccionado],
     });
-
   }
 
   get f() {
@@ -57,8 +56,7 @@ export class NewChatComponent {
 
   get erroresNombre(): string[] {
     const errores = [];
-    if (this.f['nombre']?.hasError('required'))
-      errores.push('El nombre es obligatorio');
+    if (this.f['nombre']?.hasError('required')) errores.push('El nombre es obligatorio');
     if (this.f['nombre']?.hasError('minlength'))
       errores.push('El nombre debe tener al menos 3 caracteres');
     if (this.f['nombre']?.hasError('maxlength'))
@@ -67,7 +65,6 @@ export class NewChatComponent {
       errores.push('El nombre solo puede contener letras y espacios');
     return errores;
   }
-
 
   seleccionarAvatar(avatar: string) {
     this.avatarSeleccionado = avatar;

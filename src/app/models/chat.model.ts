@@ -1,11 +1,10 @@
-
 export interface Mensaje {
   id: string;
   contenido: string;
   remitente: 'usuario' | 'app';
   timestamp: Date;
 }
- 
+
 export interface Chat {
   id: string;
   nombre: string;
@@ -15,4 +14,3 @@ export interface Chat {
   ultimaActividad: Date;
   mensajes: Mensaje[];
 }
- 

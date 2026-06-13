@@ -12,7 +12,9 @@
   </div>
 
   <div class="search-container">
+    <label for="nombre"></label>
     <input
+      id ="nombre"
       type="text"
       class="search-input"
       placeholder="Buscar chat..."
@@ -24,7 +26,8 @@
   <div class="chats-list">
     @for (chat of filteredChats(); track chat.id) {
       <div class="chat-item"
-           [routerLink]="['/chats', chat.id]">
+           [routerLink]="['/chats', chat.id]"
+            routerLinkActive="active-chat">
 
         <img [src]="chat.avatar" [alt]="chat.nombre" title="avatar" class="avatar" />
 

@@ -1,14 +1,14 @@
-import { Component, computed, inject,signal } from '@angular/core';
+import { Component, computed, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { RouterLink ,RouterLinkActive} from '@angular/router';
 import { ChatService } from '../../services/chat.service';
 import { FormatoFechaPipe } from '../../pipes/formato-fecha.pipe';
 
 @Component({
   selector: 'app-chat-list',
   standalone: true,
-  imports: [CommonModule, FormsModule, FormatoFechaPipe, RouterLink],
+  imports: [CommonModule, FormsModule, FormatoFechaPipe, RouterLink, RouterLinkActive],
   templateUrl: './chat-list.component.html',
   styleUrl: './chat-list.component.css',
 })

@@ -1,60 +1,50 @@
 <div class="chat-window-container">
   @if (chatActual) {
-    <div class="chat-header">
-      <div class="contact-info">
-        <img [src]="chatActual.avatar"
-        alt="{{ chatActual.nombre || 'Avatar del contacto' }}"
-         title="{{ chatActual.nombre || 'Avatar del contacto' }}" class="avatar-header" />
-        <div>
-          <h2>{{ chatActual.nombre }}</h2>
-          <p class="estado">{{ chatActual.estado }}</p>
-        </div>
-      </div>
-      <div class="header-actions">
-        <button class="icon-btn" title="Llamada">📞</button>
-        <button class="icon-btn" title="Información">ⓘ</button>
+  <div class="chat-header">
+    <div class="contact-info">
+      <img [src]="chatActual.avatar" alt="{{ chatActual.nombre || 'Avatar del contacto' }}"
+        title="{{ chatActual.nombre || 'Avatar del contacto' }}" class="avatar-header" />
+      <div>
+        <h2>{{ chatActual.nombre }}</h2>
+        <p class="estado">{{ chatActual.estado }}</p>
       </div>
     </div>
-
-    <div class="messages-container" #messagesContainer>
-      @if (chatActual.mensajes.length === 0) {
-        <div class="empty-state">
-          <p>Inicia una conversación</p>
-        </div>
-      }
-
-      @for (mensaje of chatActual.mensajes; track mensaje.id) {
-        <div [class]="'mensaje mensaje-' + mensaje.remitente">
-          <div class="mensaje-bubble">
-            <p>{{ mensaje.contenido }}</p>
-            <span class="timestamp">{{ mensaje.timestamp | formatoFecha }}</span>
-          </div>
-        </div>
-      }
+    <div class="header-actions">
+      <button class="icon-btn" title="Llamada">📞</button>
+      <button class="icon-btn" title="Información">ⓘ</button>
     </div>
+  </div>
 
-    <div class="input-container">
-      <form [formGroup]="formMensaje" (ngSubmit)="enviarMensaje()" class="input-form">
-        <input
-          type="text"
-          placeholder="Escribe tu mensaje..."
-          formControlName="mensaje"
-          class="input-mensaje"
-          (keyup.enter)="enviarMensaje()"
-        />
-        <button 
-          type="submit" 
-          class="btn-enviar"
-          [disabled]="!formMensaje.valid"
-          title="Enviar"
-        >
-          ✈
-        </button>
-      </form>
+  <div class="messages-container" #messagesContainer>
+    @if (chatActual.mensajes.length === 0) {
+    <div class="empty-state">
+      <p>Inicia una conversación</p>
     </div>
+    }
+
+    @for (mensaje of chatActual.mensajes; track mensaje.id) {
+    <div [class]="'mensaje mensaje-' + mensaje.remitente">
+      <div class="mensaje-bubble">
+        <p>{{ mensaje.contenido }}</p>
+        <span class="timestamp">{{ mensaje.timestamp | formatoFecha }}</span>
+      </div>
+    </div>
+    }
+  </div>
+
+  <div class="input-container">
+    <form [formGroup]="formMensaje" (ngSubmit)="enviarMensaje()" class="input-form">
+      <label for="mensaje"></label>
+      <input id="mensaje" type="text" placeholder="Escribe tu mensaje..." formControlName="mensaje"
+        class="input-mensaje" (keyup.enter)="enviarMensaje()" />
+      <button type="submit" class="btn-enviar" [disabled]="!formMensaje.valid" title="Enviar">
+        ✈
+      </button>
+    </form>
+  </div>
   } @else {
-    <div class="no-chat-selected">
-      <p>Selecciona un chat para empezar</p>
-    </div>
+  <div class="no-chat-selected">
+    <p>Selecciona un chat para empezar</p>
+  </div>
   }
 </div>

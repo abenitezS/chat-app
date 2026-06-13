@@ -1,9 +1,8 @@
 <div class="new-chat-container">
-
-   <div class="page-header">
-  <h2>Nuevo Chat</h2>
-</div>
-      <div class="form-card">
+  <div class="page-header">
+    <h2>Nuevo Chat</h2>
+  </div>
+  <div class="form-card">
     <form [formGroup]="formNuevoChat" (ngSubmit)="crearChat()" class="form">
       <div class="form-group">
         <label for="nombre">Nombre del contacto</label>
@@ -15,14 +14,11 @@
           class="input"
           [class.error]="f['nombre'].invalid && f['nombre'].touched"
         />
-      <ul class="errores">
-
-            @for(errorNombre of erroresNombre; track $index) {
-          <li>{{ errorNombre }}</li>
-            }
-    </ul>
-        
-     
+        <ul class="errores">
+          @for (errorNombre of erroresNombre; track $index) {
+            <li>{{ errorNombre }}</li>
+          }
+        </ul>
       </div>
 
       <div class="form-group">
@@ -43,19 +39,10 @@
       </div>
 
       <div class="form-actions">
-        <button
-          type="button"
-          class="btn btn-secondary"
-          (click)="cancelar()"
-          [disabled]="loading"
-        >
+        <button type="button" class="btn btn-secondary" (click)="cancelar()" [disabled]="loading">
           Cancelar
         </button>
-        <button
-          type="submit"
-          class="btn btn-primary"
-          [disabled]="!formNuevoChat.valid || loading"
-        >
+        <button type="submit" class="btn btn-primary" [disabled]="!formNuevoChat.valid || loading">
           @if (loading) {
             Creando...
           } @else {
