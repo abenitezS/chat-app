@@ -2,12 +2,11 @@
 
 ## Descripción
 
-Chat App es una aplicación web desarrollada con Angular 21 que simula una plataforma de mensajería instantánea similar a WhatsApp. Permite visualizar conversaciones, abrir chats individuales, enviar mensajes y crear nuevos contactos mediante formularios reactivos.
+Chat App es una aplicación web desarrollada con Angular 21 que simula una plataforma de mensajería instantánea similar a WhatsApp. Permite visualizar conversaciones, abrir chats individuales, enviar mensajes y crear nuevos chats mediante formularios reactivos.
 
 La aplicación fue desarrollada utilizando Standalone Components, Angular Router y RxJS, aplicando principios de diseño responsive para adaptarse a dispositivos móviles y de escritorio.
 
 ---
-ng 
 ## Funcionalidades
 
 * Lista de conversaciones.
@@ -91,9 +90,7 @@ src/
 ├── styles.css
 └── index.html
 ```
-
 ---
-
 ## Estructura de navegación
 
 ### Lista de chats
@@ -104,7 +101,7 @@ Ruta:
 /chats
 ```
 - Inicio
-![Captura de pantalla](src/assets/capturas/Captura1.png)      
+![Captura de pantalla](/public/capturas/pantalla-inicio.png)      
 
 Pagina de inicio 
 Permite visualizar todas las conversaciones disponibles y realizar búsquedas.
@@ -117,28 +114,46 @@ Ruta:
 /chats/:id
 ```
  Chat con el contacto seleccionado 
-![Captura de pantalla](src/assets/capturas/Captura1.png)      
-
+![Captura de pantalla](/public/capturas/pantalla-Chat.png)      
 
 Muestra los mensajes correspondientes al contacto seleccionado y permite enviar nuevos mensajes.
 
 ### Nuevo chat
-
 Ruta:
-
 ```text
 /nuevo
 ```
-
 - Nuevo
 
-![Captura de pantalla](src/assets/capturas/Captura1.png)      
+![Captura de pantalla](/public/capturas/crear_nuevo_chat.png)      
 Formulario para crear una nueva conversación seleccionando nombre y avatar.
----
 
+### Buscar en chats
+```text
+/Chats
+```
+
+- Buscador chats
+
+![Captura de pantalla](/public/capturas/pantalla-buscar.png)     
+
+En la lista de chats existe un buscado para filtrar y buscar por nombre.
+---
 ## Diseño Responsive
 
-La aplicación adapta su interfaz según el tamaño de pantalla:
+La aplicación adapta su interfaz según el tamaño de pantalla podremos ver panel derecho o panel izquierdo 
+- Inicio
+![Captura de pantalla](/public/capturas/pantalla-inicio-responsive.png) 
+Cuando presiona el flecha a izquieda se muestra lista de chats   
+![Captura de pantalla](/public/capturas/lista_chats_responsive.png)   
+- Conversación 
+![Captura de pantalla](/public/capturas/pantalla-Chat_responsive.png)    
+- Nuevo Chat
+![Captura de pantalla](/public/capturas/crear_nuevo_chat_responsive.png)  
+- Buscador de chat
+![Captura de pantalla](/public/capturas/pantalla-buscar-responsive.png)  
+
+
 
 ### Escritorio
 
@@ -154,16 +169,16 @@ La aplicación adapta su interfaz según el tamaño de pantalla:
 * Sidebar adaptable al ancho completo de la pantalla.
 
 ---
+## Despliegue
+- Plataforma elegida: Vercel
 
-## Autor
+https://chat-app-beta.vercel.app
 
-**Alicia Benitez**
+## Créditos del autor
 
-Trabajo Final Integrador
-
-Curso: Desarrollo Frontend con Angular
-
-Año: 2026
+- **Estudiante:** Alicia Benitez
+- **Curso:** Desarrollo con Angular
+- **Trabajo Final Integrador:**  Desarrollo de un Clon de Chat
 
 ---
 
