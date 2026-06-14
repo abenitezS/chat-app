@@ -143,14 +143,22 @@ En la lista de chats existe un buscado para filtrar y buscar por nombre.
 
 La aplicación adapta su interfaz según el tamaño de pantalla podremos ver panel derecho o panel izquierdo 
 - Inicio
+
 ![Captura de pantalla](/public/capturas/pantalla-inicio-responsive.png) 
+
 Cuando presiona el flecha a izquieda se muestra lista de chats   
+
 ![Captura de pantalla](/public/capturas/lista_chats_responsive.png)   
+
 - Conversación 
-![Captura de pantalla](/public/capturas/pantalla-Chat_responsive.png)    
+![Captura de pantalla](/public/capturas/pantalla-Chat_responsive.png)   
+
 - Nuevo Chat
+
 ![Captura de pantalla](/public/capturas/crear_nuevo_chat_responsive.png)  
+
 - Buscador de chat
+
 ![Captura de pantalla](/public/capturas/pantalla-buscar-responsive.png)  
 
 
