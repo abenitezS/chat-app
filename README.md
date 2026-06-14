@@ -182,7 +182,7 @@ Cuando presiona boton de  flecha a izquieda se muestra lista de chats
 ## Despliegue
 - Plataforma elegida: Vercel
 
-https://chat-app-beta.vercel.app
+https://chat-app-roan-xi.vercel.app/chats
 
 ## Créditos del autor
 
