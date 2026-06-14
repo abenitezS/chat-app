@@ -146,11 +146,13 @@ La aplicación adapta su interfaz según el tamaño de pantalla podremos ver pan
 
 ![Captura de pantalla](/public/capturas/pantalla-inicio-responsive.png) 
 
-Cuando presiona el flecha a izquieda se muestra lista de chats   
+Cuando presiona boton de  flecha a izquieda se muestra lista de chats   
 
 ![Captura de pantalla](/public/capturas/lista_chats_responsive.png)   
 
+
 - Conversación 
+
 ![Captura de pantalla](/public/capturas/pantalla-Chat_responsive.png)   
 
 - Nuevo Chat
